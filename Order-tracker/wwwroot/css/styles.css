@@ -1,9 +1,16 @@
-div#footer {
+div.footer {
   position: fixed;
   bottom: 0px;
   left: 0px;
   width: 100%;
   color: #CCC;
   background: #333;
-  padding: 8px;
+  padding: 0px;
 }
+
+div#jumb {
+  margin: auto !important;
+  /* float: right; */
+  min-width: 650px;
+}
+

@@ -10,8 +10,10 @@
       crossorigin="anonymous">
     <link rel="stylesheet" href="~/css/styles.css">
   </head>
-  <body class="container text-center p-4">
-    @RenderBody()
+  <body class="row d-flex justify-content-center m-4">
+    <div class="jumbotron col-md-6 p-4 text-center shadow-lg bg-white " id="jumb">
+      @RenderBody()
+    </div>
     @await Html.PartialAsync("Footer")
   </body>
 </html>
