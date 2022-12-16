@@ -35,5 +35,23 @@ namespace Tracker.Tests
       //Assert
       Assert.AreEqual(title, result);
     }
+
+    public void SetTitle_SetTitle_String()
+    {
+      //Arrange
+      string title = "pastry";
+      string description = "variety package";
+      int price = 2000;
+      string date = "12/16/2022";
+      Order newOrder = new Order(title, description, price, date);
+
+      //Act
+      string updatedTitle = "bread";
+      newOrder.Title = updatedTitle;
+      string result = newOrder.Title;
+
+      //Assert
+      Assert.AreEqual(updatedTitle, result);
+    }
   }
 }
