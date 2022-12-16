@@ -18,5 +18,22 @@ namespace Tracker.Tests
       Order newOrder = new Order(title, description, price, date);
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
+
+    [TestMethod]
+    public void GetTitle_ReturnsTitle_String()
+    {
+      //Arrange
+      string title = "pastry";
+      string description = "variety package";
+      int price = 2000;
+      string date = "12/16/2022";
+
+      //Act
+      Order newOrder = new Order(title, description, price, date);
+      string result = newOrder.Title;
+
+      //Assert
+      Assert.AreEqual(title, result);
+    }
   }
 }
