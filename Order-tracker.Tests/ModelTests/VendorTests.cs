@@ -67,7 +67,7 @@ namespace Tracker.Tests
     }
 
     [TestMethod]
-    public void Find_ReturnsCorrectCategory_Category()
+    public void Find_ReturnsCorrectVendor_Vendor()
     {
       //Arrange
       string name01 = "Starbucks";
@@ -80,6 +80,26 @@ namespace Tracker.Tests
 
       //Assert
       Assert.AreEqual(newVendor2, result);
+    }
+
+    public void AddOrder_AssociatesOrderWithVendor_OrderList()
+    {
+      //Arrange
+      string title = "pastry";
+      string description = "variety package";
+      int price = 2000;
+      string date = "12/16/2022";
+      Order newOrder = new Order(title, description, price, date);
+      List<Order> newList = new List<Order> { newOrder };
+      string name = "Starbucks";
+      Vendor newVendor = new Vendor(name);
+      newVendor.AddOrder(newOrder);
+
+      //Act
+      List<Order> result = newVendor.Orders;
+
+      //Assert
+      CollectionAssert.AreEqual(newList, result);
     }
 
   }
