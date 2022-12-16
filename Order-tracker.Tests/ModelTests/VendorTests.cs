@@ -66,5 +66,21 @@ namespace Tracker.Tests
       CollectionAssert.AreEqual(newList, result);
     }
 
+    [TestMethod]
+    public void Find_ReturnsCorrectCategory_Category()
+    {
+      //Arrange
+      string name01 = "Starbucks";
+      string name02 = "Wendys";
+      Vendor newVendor1 = new Vendor(name01);
+      Vendor newVendor2 = new Vendor(name02);
+
+      //Act
+      Vendor result = Vendor.Find(2);
+
+      //Assert
+      Assert.AreEqual(newVendor2, result);
+    }
+
   }
 }
