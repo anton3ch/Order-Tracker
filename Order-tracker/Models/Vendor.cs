@@ -10,9 +10,10 @@ namespace Tracker.Models
     public int Id { get; }
     public List<Order> Orders { get; set; }
 
-    public Vendor(string categoryName)
+    public Vendor(string vendorName, string vendorDescription)
     {
-      Name = categoryName;
+      Name = vendorName;
+      Description = vendorDescription;
       _instances.Add(this);
       Id = _instances.Count;
       Orders = new List<Order>{};

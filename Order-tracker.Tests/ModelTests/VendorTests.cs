@@ -17,7 +17,7 @@ namespace Tracker.Tests
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Vendor newVendor = new Vendor("test vendor");
+      Vendor newVendor = new Vendor("test vendor", "description");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
 
@@ -26,7 +26,8 @@ namespace Tracker.Tests
     {
       //Arrange
       string name = "Test Vendor";
-      Vendor newVendor = new Vendor(name);
+      string description = "description";
+      Vendor newVendor = new Vendor(name, description);
 
       //Act
       string result = newVendor.Name;
@@ -40,7 +41,8 @@ namespace Tracker.Tests
     {
       //Arrange
       string name = "Test Vendor";
-      Vendor newVendor = new Vendor(name);
+      string description = "description";
+      Vendor newVendor = new Vendor(name, description);
 
       //Act
       int result = newVendor.Id;
@@ -55,8 +57,9 @@ namespace Tracker.Tests
       //Arrange
       string name01 = "Starbucks";
       string name02 = "Wendys";
-      Vendor newVendor1 = new Vendor(name01);
-      Vendor newVendor2 = new Vendor(name02);
+      string description = "description";
+      Vendor newVendor1 = new Vendor(name01, description);
+      Vendor newVendor2 = new Vendor(name02, description);
       List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
 
       //Act
@@ -72,8 +75,9 @@ namespace Tracker.Tests
       //Arrange
       string name01 = "Starbucks";
       string name02 = "Wendys";
-      Vendor newVendor1 = new Vendor(name01);
-      Vendor newVendor2 = new Vendor(name02);
+      string description = "description";
+      Vendor newVendor1 = new Vendor(name01, description);
+      Vendor newVendor2 = new Vendor(name02, description);
 
       //Act
       Vendor result = Vendor.Find(2);
@@ -92,7 +96,8 @@ namespace Tracker.Tests
       Order newOrder = new Order(title, description, price, date);
       List<Order> newList = new List<Order> { newOrder };
       string name = "Starbucks";
-      Vendor newVendor = new Vendor(name);
+      string descriptionVendor = "description";
+      Vendor newVendor = new Vendor(name, descriptionVendor);
       newVendor.AddOrder(newOrder);
 
       //Act
