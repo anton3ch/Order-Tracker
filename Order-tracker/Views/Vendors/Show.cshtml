@@ -4,6 +4,7 @@
 @using Tracker.Models;
 
 <h3>Here are all the orders for @Model["vendor"].Name:</h3>
+<h4>@Model["vendor"].Description:</h4>
 
 <ol>
 @foreach (Order order in @Model["orders"])
